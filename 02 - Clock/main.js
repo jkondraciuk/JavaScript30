@@ -7,7 +7,7 @@ setInterval(() => {
   const hours = now.getHours();
   const minutes = now.getMinutes();
   const seconds = now.getSeconds();
-  const _offset = 90; // 90 because of we start at 90deg in css
+  const _offset = 90; // 90 because of we set the clock at 90deg in css
 
   const hoursDegrees = hours * 15 + _offset;
   const minutesDegrees = minutes * 6 + _offset;
