@@ -6,7 +6,24 @@
   </head>
   <body>
     <canvas id="draw" width="800" height="800"></canvas>
-    <script></script>
+    <script>
+      const canvas = document.querySelector('#draw');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.outerWidth;
+      canvas.height = window.innerHeight;
+      
+      ctx.strokeStyle = '#BADA55';
+      ctx.lineJoin = 'round';
+      ctx.lineCap = 'round';
+
+      let isDrawing = false;
+      let lastX = 0;
+      let lastY = 0;
+
+      console.log(canvas.width);
+
+
+    </script>
 
     <style>
       html,
