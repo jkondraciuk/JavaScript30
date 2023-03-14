@@ -20,7 +20,27 @@
       let lastX = 0;
       let lastY = 0;
 
-      console.log(canvas.width);
+      const draw = (e) => {
+        if (!isDrawing) return;
+        
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+
+        lastX = e.offsetX;
+        lastY = e.offsetY;
+      }
+
+      document.addEventListener('mousemove', draw);
+      document.addEventListener('mousedown', (e) => {
+        isDrawing = true;
+
+        lastX = e.offsetX;
+        lastY = e.offsetY;
+      });
+      document.addEventListener('mouseup', () => isDrawing = false);
+      document.addEventListener('mouseout', () => isDrawing = false);
 
 
     </script>
